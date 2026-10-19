@@ -1,22 +1,11 @@
-name: Build
-
+# GitHub Actions paused on 2026-10-19 to conserve usage.
+# Re-enable by restoring original workflow from repository Git history.
+name: CI (PAUSED)
 on:
-  push:
-    branches:
-      - build/core-chukka-flow
-  pull_request:
-
+  workflow_dispatch:
 jobs:
-  build:
+  paused:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
+      - run: echo "Paused by owner"
